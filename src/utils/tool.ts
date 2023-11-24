@@ -1,9 +1,5 @@
-import copyPaste from 'copy-paste'
+import vscode from 'vscode'
 
 export function writeToClipboard(text: string) {
-  return new Promise((resolve) => {
-    copyPaste.copy(text, () => {
-      resolve(true)
-    })
-  })
+  vscode.env.clipboard.writeText(text)
 }

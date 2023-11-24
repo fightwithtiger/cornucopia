@@ -1,6 +1,6 @@
 import { inspect } from 'util'
 import { dirname, resolve } from 'path'
-import fs from 'fs-extra'
+import fs from 'fs'
 import vscode from 'vscode'
 import { parse } from '@babel/parser'
 import { genStyleText, getImportDeclarations, getJSXElements, jsx2ClassNameTree } from '../core'
@@ -63,7 +63,7 @@ export default async function genStyleFile() {
         fs.mkdirSync(dir, { recursive: true })
       }
       const scssCode = await formatScss(str)
-      fs.writeFile(absolutePath, scssCode)
+      fs.writeFileSync(absolutePath, scssCode)
     }
 
     vscode.window.showInformationMessage('Successfully created')

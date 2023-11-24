@@ -1,7 +1,7 @@
 import { inspect } from 'util'
 import vscode from 'vscode'
 import { parse } from '@babel/parser'
-// import fs from 'fs-extra'
+// import fs from 'fs'
 import { genStyleText, getJSXElements, jsx2ClassNameTree } from '../core'
 import { formatScss, getSelectedText, writeToClipboard } from '../utils'
 
@@ -32,11 +32,9 @@ export default async function genStyle() {
     }
 
     const scssCode = await formatScss(str)
-    const success = await writeToClipboard(scssCode)
+    writeToClipboard(scssCode)
 
-    if (success) {
-      vscode.window.showInformationMessage('Successfully wrote to clipboard')
-    }
+    vscode.window.showInformationMessage('Successfully wrote to clipboard')
   } catch (e) {
     console.error(`e: ${inspect(e)}`)
     vscode.window.showErrorMessage('Please check your JSX syntax')

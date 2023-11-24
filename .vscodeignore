@@ -2,4 +2,12 @@ src
 test
 .github
 .vscode
-# node_modules
+.vscode/**
+.gitignore
+**/tsconfig.json
+**/.eslintrc
+**/*.map
+**/*.ts
+scripts
+*.vsix
+node_modules

@@ -121,6 +121,15 @@ global.module.scss
 
 ```
 
+## Development
+```
+git clone https://github.com/fightwithtiger/cornucopia
+pnpm install
+pnpm install --engine-strict @electron/asar -g
+
+pnpm run dev
+```
+
 ## License
 
 [MIT](./LICENSE) License © 2022 [fightwithtiger](https://github.com/fightwithtiger)
