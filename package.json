@@ -2,7 +2,7 @@
   "publisher": "fightwithtiger",
   "name": "cornucopia",
   "displayName": "cornucopia",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": true,
   "description": "",
   "author": "fightwithtiger <2284925818@qq.com>",
@@ -61,7 +61,8 @@
     "@babel/traverse": "^7.23.3",
     "postcss": "^8.4.31",
     "postcss-scss": "^4.0.9",
-    "stylefmt": "^6.0.3"
+    "stylefmt": "^6.0.3",
+    "vue-template-compiler": "^2.7.15"
   },
   "devDependencies": {
     "@antfu/ni": "^0.21.3",

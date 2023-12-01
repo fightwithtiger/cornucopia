@@ -1,20 +1,20 @@
 import vscode from 'vscode'
 
-export function getActiveDocumentText() {
+function getEditor() {
   const editor = vscode.window.activeTextEditor
   if (!editor) {
     throw new Error('No active text editor')
   }
+  return editor
+}
 
+export function getActiveDocumentText() {
+  const editor = getEditor()
   return editor.document.getText()
 }
 
 export function getSelectedText() {
-  const editor = vscode.window.activeTextEditor
-  if (!editor) {
-    throw new Error('No active text editor')
-  }
-
+  const editor = getEditor()
   const doc = editor.document.getText()
   const arr = doc.split('\n')
   const {
@@ -32,4 +32,9 @@ export function getSelectedText() {
     }
   }
   return str
+}
+
+export function getCurrentFilePath() {
+  const editor = getEditor()
+  return editor.document.fileName
 }

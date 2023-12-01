@@ -11,5 +11,6 @@
     "starterts",
     "tegor",
     "typecheck"
-  ]
+  ],
+  "editor.inlineSuggest.showToolbar": "always"
 }
