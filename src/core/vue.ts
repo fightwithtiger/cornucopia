@@ -12,7 +12,7 @@ export function vueTemplate2ClassNameTree(ast: any, head: any = { children: [] }
 
   if (children && children.length > 0) {
     for (const c of children) {
-      const child = vueTemplate2ClassNameTree(c)
+      const child = vueTemplate2ClassNameTree(c, head)
       if (child.className === head.className) {
         continue
       }

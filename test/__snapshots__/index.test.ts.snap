@@ -1,0 +1,71 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`should > exported 1`] = `
+{
+  "ast": {
+    "attrsList": [],
+    "attrsMap": {},
+    "children": [
+      {
+        "attrsList": [],
+        "attrsMap": {},
+        "children": [
+          {
+            "static": true,
+            "text": "
+    aaaaa
+      ",
+            "type": 3,
+          },
+          {
+            "attrsList": [],
+            "attrsMap": {
+              "class": "header",
+            },
+            "children": [],
+            "parent": [Circular],
+            "plain": false,
+            "pre": undefined,
+            "rawAttrsMap": {},
+            "static": true,
+            "staticClass": "\\"header\\"",
+            "tag": "div",
+            "type": 1,
+          },
+        ],
+        "parent": [Circular],
+        "plain": true,
+        "pre": undefined,
+        "rawAttrsMap": {},
+        "static": true,
+        "staticInFor": false,
+        "staticProcessed": true,
+        "staticRoot": true,
+        "tag": "div",
+        "type": 1,
+      },
+    ],
+    "parent": undefined,
+    "plain": true,
+    "rawAttrsMap": {},
+    "slotScope": undefined,
+    "static": false,
+    "staticRoot": false,
+    "tag": "template",
+    "type": 1,
+  },
+  "classMap": {
+    "children": [
+      {
+        "children": [],
+        "classList": [
+          {
+            "className": "header",
+          },
+        ],
+        "className": "header",
+      },
+    ],
+  },
+}
+`;

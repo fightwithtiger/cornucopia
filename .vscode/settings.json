@@ -12,5 +12,5 @@
     "tegor",
     "typecheck"
   ],
-  "editor.inlineSuggest.showToolbar": "onHover"
+  "editor.inlineSuggest.showToolbar": "always"
 }
