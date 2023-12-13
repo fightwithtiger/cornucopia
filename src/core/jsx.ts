@@ -31,7 +31,15 @@ function resolveJsxElement(jsxNode: any, head: any) {
   }, [])
 
   if (classNameAttr) {
-    const classList = extractClassNameFromExpression(classNameAttr.value.expression)
+    const classList = []
+    if (classNameAttr.value.type === 'StringLiteral') {
+      const list = extractStringLiteralExpression({ value: classNameAttr.value.value })
+
+      classList.push(...list)
+    } else {
+      classList.push(...extractClassNameFromExpression(classNameAttr.value.expression))
+    }
+
     if (classList.length > 0) {
       head = {
         className: classList[0].className,
@@ -47,7 +55,7 @@ function resolveJsxElement(jsxNode: any, head: any) {
     if (child.className === head.className && child.key === head.key) {
       continue
     }
-    if (!child.className && !child.key && child.children) {
+    if (!child.className && child.children) {
       head.children.push(...child.children)
     } else {
       head.children.push(child)
@@ -84,6 +92,9 @@ function extractClassNameFromExpression(expression: any) {
       const res = extractClassNameFromExpression(exp)
       list.push(...flatten(res))
     }
+  } else if (type === 'StringLiteral') {
+    const res = extractStringLiteralExpression(expression)
+    list.push(...res)
   }
   return list
 }
@@ -94,6 +105,16 @@ function extractMemberExpression(expression: any) {
     key: object.name,
     className: property.name,
   }
+}
+
+function extractStringLiteralExpression(expression: any) {
+  const { value } = expression
+  return value.split(/\s+/g).filter((c: string) => !!c).map((c: string) => {
+    return {
+      key: '',
+      className: c,
+    }
+  })
 }
 
 export function getJSXElements(ast: any) {

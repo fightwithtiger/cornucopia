@@ -2,7 +2,7 @@
   "publisher": "fightwithtiger",
   "name": "cornucopia",
   "displayName": "cornucopia",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "private": true,
   "description": "",
   "author": "fightwithtiger <2284925818@qq.com>",
@@ -17,6 +17,7 @@
   },
   "categories": [],
   "main": "./dist/entry.js",
+  "icon": "assets/box.jpg",
   "contributes": {
     "commands": [
       {
